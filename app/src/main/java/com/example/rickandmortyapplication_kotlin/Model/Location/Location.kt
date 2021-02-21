@@ -9,5 +9,5 @@ data class Location(
     val info: Info,
     @SerializedName("results")
     @Expose
-    val results: List<Result>
+    val results: List<LocationResult>
 )

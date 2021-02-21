@@ -3,7 +3,7 @@ package com.example.rickandmortyapplication_kotlin.Model.Location
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class Result(
+data class LocationResult(
     @SerializedName("created")
     @Expose
     val created: String,

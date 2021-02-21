@@ -1,4 +1,4 @@
-package com.example.rickandmortyapplication_kotlin.Adapter
+package com.example.rickandmortyapplication_kotlin.View.Episodes
 
 import android.content.Context
 import android.util.Log
@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.rickandmortyapplication_kotlin.R
 import com.example.rickandmortyapplication_kotlin.Model.Episode.EpisodeResult
 
-class EpisodeViewAdapter constructor(context: Context?, episodeList: List<EpisodeResult?>): RecyclerView.Adapter<EpisodeViewAdapter.MyVH>() {
+class EpisodeListAdapter constructor(context: Context?, episodeList: List<EpisodeResult?>): RecyclerView.Adapter<EpisodeListAdapter.MyVH>() {
 
     private var context: Context? = null
     var episodeList: List<EpisodeResult?> = emptyList()
@@ -29,32 +29,30 @@ class EpisodeViewAdapter constructor(context: Context?, episodeList: List<Episod
         }
     }
 
-    init
-    {
+    init {
         this.context = context
         this.episodeList = episodeList
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EpisodeViewAdapter.MyVH
-    {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyVH {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
 
-        Log.d("TestAdapter", "Success")
         val episodeView: View =
             inflater.inflate(R.layout.episode_item_view, parent, false)
 
-        val vh = MyVH(episodeView)
+        val vh =
+            MyVH(
+                episodeView
+            )
         return vh
     }
 
-    override fun getItemCount(): Int
-    {
+    override fun getItemCount(): Int {
         return episodeList.size
     }
 
-    override fun onBindViewHolder(holder: EpisodeViewAdapter.MyVH, position: Int)
-    {
+    override fun onBindViewHolder(holder: MyVH, position: Int) {
         val episode: EpisodeResult? = episodeList[position]
 
         val episodeName = holder.episodeName

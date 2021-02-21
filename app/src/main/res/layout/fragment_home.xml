@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#97C740"
     android:tag="HomeFragment"
-    tools:context=".Fragment.HomeFragment">
+    tools:context=".View.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="150dp"
             android:backgroundTint="#14A1BB"
-            android:text="Vers les personnages"
+            android:text="Personnages"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:backgroundTint="#14A1BB"
-            android:text="Vers les episodes"
+            android:text="Episodes"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/character_view_btn" />
@@ -50,9 +50,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:backgroundTint="#14A1BB"
-            android:text="Vers les lieux"
+            android:text="Lieux"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/episode_view_btn" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

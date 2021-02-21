@@ -1,4 +1,4 @@
-package com.example.rickandmortyapplication_kotlin.WebServices
+package com.example.rickandmortyapplication_kotlin.Model.WebServices
 
 import com.example.rickandmortyapplication_kotlin.Model.Character.Character
 import com.example.rickandmortyapplication_kotlin.Model.Location.Location

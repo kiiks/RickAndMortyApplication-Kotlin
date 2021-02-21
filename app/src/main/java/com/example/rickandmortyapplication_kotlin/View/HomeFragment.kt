@@ -1,18 +1,15 @@
-package com.example.rickandmortyapplication_kotlin.Fragment
+package com.example.rickandmortyapplication_kotlin.View
 
-import android.app.Activity
 import android.os.Bundle
-import android.text.TextUtils.replace
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.FrameLayout
-import com.example.rickandmortyapplication_kotlin.Model.Episode.Episode
 import com.example.rickandmortyapplication_kotlin.R
-import com.example.rickandmortyapplication_kotlin.View.MainActivity
-import kotlinx.android.synthetic.*
+import com.example.rickandmortyapplication_kotlin.View.Characters.CharacterListFragment
+import com.example.rickandmortyapplication_kotlin.View.Episodes.EpisodeListFragment
+import com.example.rickandmortyapplication_kotlin.View.Locations.LocationListFragment
 
 class HomeFragment : Fragment() {
 
@@ -27,15 +24,20 @@ class HomeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
+        // --- UI --- //
         btnCharacter = view.findViewById(R.id.character_view_btn)
         btnEpisode = view.findViewById(R.id.episode_view_btn)
         btnLocation = view.findViewById(R.id.location_view_btn)
 
+        // --- Event --- //
         btnCharacter.setOnClickListener {
             val transaction = activity?.supportFragmentManager?.beginTransaction()
 
             transaction
-                ?.replace(R.id.container,CharacterFragment.newInstance())
+                ?.replace(R.id.container,
+                    CharacterListFragment.newInstance()
+                )
+                ?.addToBackStack("characters")
                 ?.commit()
         }
 
@@ -43,12 +45,22 @@ class HomeFragment : Fragment() {
             val transaction = activity?.supportFragmentManager?.beginTransaction()
 
             transaction
-                ?.replace(R.id.container,EpisodeFragment.newInstance())
+                ?.replace(R.id.container,
+                    EpisodeListFragment.newInstance()
+                )
+                ?.addToBackStack("episode")
                 ?.commit()
         }
 
         btnLocation.setOnClickListener {
+            val transaction = activity?.supportFragmentManager?.beginTransaction()
 
+            transaction
+                ?.replace(R.id.container,
+                    LocationListFragment.newInstance()
+                )
+                ?.addToBackStack("location")
+                ?.commit()
         }
 
         return view
@@ -56,7 +68,8 @@ class HomeFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() = HomeFragment()
+        fun newInstance() =
+            HomeFragment()
 
     }
 }

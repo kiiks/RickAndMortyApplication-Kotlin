@@ -1,59 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="10dp"
     android:layout_marginBottom="20dp"
-    android:background="#97C740">
-
-    <ImageView
-        android:id="@+id/characterPicture"
-        android:layout_width="253dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        tools:srcCompat="@tools:sample/avatars" />
+    android:padding="15dp"
+    app:cardBackgroundColor="#97C740"
+    app:cardCornerRadius="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/characterNameTV"
-            android:layout_width="match_parent"
-            android:layout_height="31dp"
-            android:text="name"
-            android:textAllCaps="true"
-            android:textSize="24sp" />
-
-        <LinearLayout
+        <ImageView
+            android:id="@+id/characterPicture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:orientation="horizontal">
+            android:padding="10dp" />
 
-            <TextView
-                android:id="@+id/statusTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="30dp"
-                android:layout_weight="1"
-                android:text="status" />
-
-            <TextView
-                android:id="@+id/speciesTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="species" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/lastLocationTV"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Last location :" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/characterNameTV"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:text="name"
+                android:textAllCaps="true"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/statusTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_weight="1"
+                    android:text="status" />
+
+                <TextView
+                    android:id="@+id/speciesTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="species" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/lastLocationTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Last location :" />
+
+            <ImageView
+                android:id="@+id/favoriteIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/btn_star_big_off" />
+        </LinearLayout>
+
     </LinearLayout>
-</LinearLayout>
+
+</androidx.cardview.widget.CardView>
